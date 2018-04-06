@@ -191,6 +191,29 @@
     },
     {
       "key": {
+        "uuid": "76073a42_afcd4d57",
+        "filename": "sensor.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1013695
+      },
+      "writtenOn": "2018-04-06T20:26:41Z",
+      "side": 1,
+      "message": "hmm... czy tu nie brakuje może jeszcze identyfikatoru zasobu?\n\n\"Pojedynczy pomiar zawiera:\nidentyfikator zasobu,\nrodzaj mierzonej metryki,\nwartość zmierzona,\ntimestamp z chwili pomiaru.\"",
+      "range": {
+        "startLine": 10,
+        "startChar": 8,
+        "endLine": 13,
+        "endChar": 51
+      },
+      "revId": "6770d4926847451e5b7c6688d744d07cca6b2bf5",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1b1506fb_bebf1c40",
         "filename": "sensor.py",
         "patchSetId": 2
