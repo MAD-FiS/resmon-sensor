@@ -88,6 +88,30 @@
     },
     {
       "key": {
+        "uuid": "452ad521_620cbe36",
+        "filename": "main.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1013778
+      },
+      "writtenOn": "2018-04-06T20:59:18Z",
+      "side": 1,
+      "message": "Moim zdaniem tutaj można dodać opcję -h (--help), niekoniecznie w pierwszym podejściu, ale uwaga warta zainteresowania",
+      "parentUuid": "1e8b8b44_7e8403f8",
+      "range": {
+        "startLine": 47,
+        "startChar": 0,
+        "endLine": 47,
+        "endChar": 26
+      },
+      "revId": "6770d4926847451e5b7c6688d744d07cca6b2bf5",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6bb95058_66084105",
         "filename": "main.py",
         "patchSetId": 2
@@ -202,6 +226,30 @@
       "writtenOn": "2018-04-06T20:26:41Z",
       "side": 1,
       "message": "hmm... czy tu nie brakuje może jeszcze identyfikatoru zasobu?\n\n\"Pojedynczy pomiar zawiera:\nidentyfikator zasobu,\nrodzaj mierzonej metryki,\nwartość zmierzona,\ntimestamp z chwili pomiaru.\"",
+      "range": {
+        "startLine": 10,
+        "startChar": 8,
+        "endLine": 13,
+        "endChar": 51
+      },
+      "revId": "6770d4926847451e5b7c6688d744d07cca6b2bf5",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "de14cd89_784dd056",
+        "filename": "sensor.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1013778
+      },
+      "writtenOn": "2018-04-06T20:59:18Z",
+      "side": 1,
+      "message": "Moim zdaniem jeśli wysyłamy dane zbuforowane, to cała paczka ma ten sam identyfikator zasobu. Dlatego nie ma powodu go dublować. Na ten moment ja bym to zostawił tutaj tak, jak jest, a identyfikator zasobu wysyłał już w momencie przesyłania całej paczki. Czyli tablica pomiarów (z bufora, o ile dobrze rozumiem) + identyfikator zasobu, skąd ta paczka pomiarów pochodzi.",
+      "parentUuid": "76073a42_afcd4d57",
       "range": {
         "startLine": 10,
         "startChar": 8,
