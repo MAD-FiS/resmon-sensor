@@ -1,0 +1,216 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3aa1ef57_30a4df59",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1013695
+      },
+      "writtenOn": "2018-04-06T20:16:05Z",
+      "side": 1,
+      "message": "Proszę, zmień commit_msg:\n1) commit_subject - co dodajesz (ogólnie krótki)\n2) commit_msg - dokładnie jakie funkcjonalności dodajesz (wysyłanie, odbieranie, co jak, może jakiś link do ewentualnego issue/taska (jeśli istnieje))",
+      "range": {
+        "startLine": 7,
+        "startChar": 6,
+        "endLine": 7,
+        "endChar": 13
+      },
+      "revId": "6770d4926847451e5b7c6688d744d07cca6b2bf5",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "184cd35a_36c13893",
+        "filename": "main.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1013695
+      },
+      "writtenOn": "2018-04-06T20:16:05Z",
+      "side": 1,
+      "message": "Prosze, dopisz dokumentację, do modułu, klasy, metod, pól itd. Jeśli będzie dokumentacja, to potem będzie można się pobawić, aby może jenkins nam generował dokumentacje na podstawie kodu",
+      "revId": "6770d4926847451e5b7c6688d744d07cca6b2bf5",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a3a795e5_1f29cfd2",
+        "filename": "main.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1013695
+      },
+      "writtenOn": "2018-04-06T20:16:05Z",
+      "side": 1,
+      "message": "mamy klase SensorClient;\nproszę zmień nazwę pliku na SensorClient.py\nhttps://softwareengineering.stackexchange.com/questions/308972/python-file-naming-convention?utm_medium\u003dorganic\u0026utm_source\u003dgoogle_rich_qa\u0026utm_campaign\u003dgoogle_rich_qa",
+      "range": {
+        "startLine": 7,
+        "startChar": 6,
+        "endLine": 7,
+        "endChar": 18
+      },
+      "revId": "6770d4926847451e5b7c6688d744d07cca6b2bf5",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1e8b8b44_7e8403f8",
+        "filename": "main.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1013695
+      },
+      "writtenOn": "2018-04-06T20:16:05Z",
+      "side": 1,
+      "message": "przy help przydałyby się gotowych kilka przykładów (komendy) w jaki sposób odpalić tego klienta (skrypt)",
+      "range": {
+        "startLine": 47,
+        "startChar": 0,
+        "endLine": 47,
+        "endChar": 26
+      },
+      "revId": "6770d4926847451e5b7c6688d744d07cca6b2bf5",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6bb95058_66084105",
+        "filename": "main.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1013695
+      },
+      "writtenOn": "2018-04-06T20:16:05Z",
+      "side": 1,
+      "message": "Proszę przerzuć to do osobnego pliku main.py ? start.py ? sensor-main.py ? sensor-start.py ?",
+      "range": {
+        "startLine": 48,
+        "startChar": 4,
+        "endLine": 57,
+        "endChar": 30
+      },
+      "revId": "6770d4926847451e5b7c6688d744d07cca6b2bf5",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7ea11901_367e0172",
+        "filename": "sender.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1013695
+      },
+      "writtenOn": "2018-04-06T20:16:05Z",
+      "side": 1,
+      "message": "Prosze, dopisz dokumentację, do modułu, klasy, metod, pól itd. Jeśli będzie dokumentacja, to potem będzie można się pobawić, aby może jenkins nam generował dokumentacje na podstawie kodu",
+      "revId": "6770d4926847451e5b7c6688d744d07cca6b2bf5",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e029386d_86a9694e",
+        "filename": "sender.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1013695
+      },
+      "writtenOn": "2018-04-06T20:16:05Z",
+      "side": 1,
+      "message": "Prosze zmień nazwe pliku na Sender.py\nhttps://softwareengineering.stackexchange.com/questions/308972/python-file-naming-convention?utm_medium\u003dorganic\u0026utm_source\u003dgoogle_rich_qa\u0026utm_campaign\u003dgoogle_rich_qa",
+      "range": {
+        "startLine": 4,
+        "startChar": 6,
+        "endLine": 4,
+        "endChar": 12
+      },
+      "revId": "6770d4926847451e5b7c6688d744d07cca6b2bf5",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "151e58bd_a29c902b",
+        "filename": "sensor.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1013695
+      },
+      "writtenOn": "2018-04-06T20:16:05Z",
+      "side": 1,
+      "message": "Prosze, dopisz dokumentację, do modułu, klasy, metod, pól itd. Jeśli będzie dokumentacja, to potem będzie można się pobawić, aby może jenkins nam generował dokumentacje na podstawie kodu",
+      "revId": "6770d4926847451e5b7c6688d744d07cca6b2bf5",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "72c72e5e_61e58150",
+        "filename": "sensor.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1013695
+      },
+      "writtenOn": "2018-04-06T20:16:05Z",
+      "side": 1,
+      "message": "Proszę zmień nazwę pliku na Sensor.py\nhttps://softwareengineering.stackexchange.com/questions/308972/python-file-naming-convention?utm_medium\u003dorganic\u0026utm_source\u003dgoogle_rich_qa\u0026utm_campaign\u003dgoogle_rich_qa",
+      "range": {
+        "startLine": 5,
+        "startChar": 6,
+        "endLine": 5,
+        "endChar": 12
+      },
+      "revId": "6770d4926847451e5b7c6688d744d07cca6b2bf5",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1b1506fb_bebf1c40",
+        "filename": "sensor.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1013695
+      },
+      "writtenOn": "2018-04-06T20:16:05Z",
+      "side": 1,
+      "message": "Prosze przenieś tę klase do pliku o nazwie SensorBuffer.py",
+      "range": {
+        "startLine": 22,
+        "startChar": 6,
+        "endLine": 22,
+        "endChar": 18
+      },
+      "revId": "6770d4926847451e5b7c6688d744d07cca6b2bf5",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    }
+  ]
+}
