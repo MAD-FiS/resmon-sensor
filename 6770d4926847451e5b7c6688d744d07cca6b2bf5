@@ -215,6 +215,30 @@
     },
     {
       "key": {
+        "uuid": "29ae90e8_c5fd2033",
+        "filename": "sensor.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1013783
+      },
+      "writtenOn": "2018-04-07T07:56:18Z",
+      "side": 1,
+      "message": "Na tej stronce jest: \"modules (filenames) should have short, all-lowercase names, and they can contain underscores;\"",
+      "parentUuid": "72c72e5e_61e58150",
+      "range": {
+        "startLine": 5,
+        "startChar": 6,
+        "endLine": 5,
+        "endChar": 12
+      },
+      "revId": "6770d4926847451e5b7c6688d744d07cca6b2bf5",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "76073a42_afcd4d57",
         "filename": "sensor.py",
         "patchSetId": 2
@@ -273,6 +297,30 @@
       "writtenOn": "2018-04-06T20:16:05Z",
       "side": 1,
       "message": "Prosze przenieś tę klase do pliku o nazwie SensorBuffer.py",
+      "range": {
+        "startLine": 22,
+        "startChar": 6,
+        "endLine": 22,
+        "endChar": 18
+      },
+      "revId": "6770d4926847451e5b7c6688d744d07cca6b2bf5",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "04866ea8_0698dcae",
+        "filename": "sensor.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1013783
+      },
+      "writtenOn": "2018-04-07T07:56:18Z",
+      "side": 1,
+      "message": "Ogólnie chyba tego nie polecają:\nhttps://stackoverflow.com/questions/1091756/are-multiple-classes-in-a-single-file-recommended?utm_medium\u003dorganic\u0026utm_source\u003dgoogle_rich_qa\u0026utm_campaign\u003dgoogle_rich_qa",
+      "parentUuid": "1b1506fb_bebf1c40",
       "range": {
         "startLine": 22,
         "startChar": 6,
