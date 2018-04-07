@@ -65,6 +65,30 @@
     },
     {
       "key": {
+        "uuid": "a508dfcf_dc9709cd",
+        "filename": "main.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1013695
+      },
+      "writtenOn": "2018-04-07T09:35:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a3a795e5_1f29cfd2",
+      "range": {
+        "startLine": 7,
+        "startChar": 6,
+        "endLine": 7,
+        "endChar": 18
+      },
+      "revId": "6770d4926847451e5b7c6688d744d07cca6b2bf5",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1e8b8b44_7e8403f8",
         "filename": "main.py",
         "patchSetId": 2
@@ -135,6 +159,30 @@
     },
     {
       "key": {
+        "uuid": "4e99a4b8_811a5aff",
+        "filename": "main.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1013695
+      },
+      "writtenOn": "2018-04-07T09:35:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6bb95058_66084105",
+      "range": {
+        "startLine": 48,
+        "startChar": 4,
+        "endLine": 57,
+        "endChar": 30
+      },
+      "revId": "6770d4926847451e5b7c6688d744d07cca6b2bf5",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7ea11901_367e0172",
         "filename": "sender.py",
         "patchSetId": 2
@@ -163,6 +211,30 @@
       "writtenOn": "2018-04-06T20:16:05Z",
       "side": 1,
       "message": "Prosze zmień nazwe pliku na Sender.py\nhttps://softwareengineering.stackexchange.com/questions/308972/python-file-naming-convention?utm_medium\u003dorganic\u0026utm_source\u003dgoogle_rich_qa\u0026utm_campaign\u003dgoogle_rich_qa",
+      "range": {
+        "startLine": 4,
+        "startChar": 6,
+        "endLine": 4,
+        "endChar": 12
+      },
+      "revId": "6770d4926847451e5b7c6688d744d07cca6b2bf5",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba233b63_74b239e6",
+        "filename": "sender.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1013695
+      },
+      "writtenOn": "2018-04-07T09:35:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e029386d_86a9694e",
       "range": {
         "startLine": 4,
         "startChar": 6,
@@ -239,6 +311,54 @@
     },
     {
       "key": {
+        "uuid": "056c5761_2c580dd1",
+        "filename": "sensor.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1013695
+      },
+      "writtenOn": "2018-04-07T09:35:26Z",
+      "side": 1,
+      "message": "To moze zostaw te nazwe taką jaka jest :)",
+      "parentUuid": "29ae90e8_c5fd2033",
+      "range": {
+        "startLine": 5,
+        "startChar": 6,
+        "endLine": 5,
+        "endChar": 12
+      },
+      "revId": "6770d4926847451e5b7c6688d744d07cca6b2bf5",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0846cba1_dc0fcb97",
+        "filename": "sensor.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1013695
+      },
+      "writtenOn": "2018-04-07T09:35:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "72c72e5e_61e58150",
+      "range": {
+        "startLine": 5,
+        "startChar": 6,
+        "endLine": 5,
+        "endChar": 12
+      },
+      "revId": "6770d4926847451e5b7c6688d744d07cca6b2bf5",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "76073a42_afcd4d57",
         "filename": "sensor.py",
         "patchSetId": 2
@@ -273,6 +393,30 @@
       "writtenOn": "2018-04-06T20:59:18Z",
       "side": 1,
       "message": "Moim zdaniem jeśli wysyłamy dane zbuforowane, to cała paczka ma ten sam identyfikator zasobu. Dlatego nie ma powodu go dublować. Na ten moment ja bym to zostawił tutaj tak, jak jest, a identyfikator zasobu wysyłał już w momencie przesyłania całej paczki. Czyli tablica pomiarów (z bufora, o ile dobrze rozumiem) + identyfikator zasobu, skąd ta paczka pomiarów pochodzi.",
+      "parentUuid": "76073a42_afcd4d57",
+      "range": {
+        "startLine": 10,
+        "startChar": 8,
+        "endLine": 13,
+        "endChar": 51
+      },
+      "revId": "6770d4926847451e5b7c6688d744d07cca6b2bf5",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c4c40c23_620f5f2e",
+        "filename": "sensor.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1013695
+      },
+      "writtenOn": "2018-04-07T09:35:26Z",
+      "side": 1,
+      "message": "Done",
       "parentUuid": "76073a42_afcd4d57",
       "range": {
         "startLine": 10,
@@ -321,6 +465,54 @@
       "side": 1,
       "message": "Ogólnie chyba tego nie polecają:\nhttps://stackoverflow.com/questions/1091756/are-multiple-classes-in-a-single-file-recommended?utm_medium\u003dorganic\u0026utm_source\u003dgoogle_rich_qa\u0026utm_campaign\u003dgoogle_rich_qa",
       "parentUuid": "1b1506fb_bebf1c40",
+      "range": {
+        "startLine": 22,
+        "startChar": 6,
+        "endLine": 22,
+        "endChar": 18
+      },
+      "revId": "6770d4926847451e5b7c6688d744d07cca6b2bf5",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6489a6b5_1bd42d03",
+        "filename": "sensor.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1013695
+      },
+      "writtenOn": "2018-04-07T09:35:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1b1506fb_bebf1c40",
+      "range": {
+        "startLine": 22,
+        "startChar": 6,
+        "endLine": 22,
+        "endChar": 18
+      },
+      "revId": "6770d4926847451e5b7c6688d744d07cca6b2bf5",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "38163b38_fdf1c180",
+        "filename": "sensor.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1013695
+      },
+      "writtenOn": "2018-04-07T09:35:26Z",
+      "side": 1,
+      "message": "To może nie prznoś tej klasy do osobnego pliku :)",
+      "parentUuid": "04866ea8_0698dcae",
       "range": {
         "startLine": 22,
         "startChar": 6,
