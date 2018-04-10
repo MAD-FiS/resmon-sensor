@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "0d40768c_f9726571",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1013695
+      },
+      "writtenOn": "2018-04-10T16:50:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3aa1ef57_30a4df59",
+      "range": {
+        "startLine": 7,
+        "startChar": 6,
+        "endLine": 7,
+        "endChar": 13
+      },
+      "revId": "6770d4926847451e5b7c6688d744d07cca6b2bf5",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "184cd35a_36c13893",
         "filename": "main.py",
         "patchSetId": 2
