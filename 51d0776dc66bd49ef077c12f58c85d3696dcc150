@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d2a92296_bd58f650",
+        "filename": "src/sender.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1013695
+      },
+      "writtenOn": "2018-04-10T16:50:27Z",
+      "side": 1,
+      "message": "proszę dopisz dokumentację dla tego modułu (czy klasy?)",
+      "revId": "51d0776dc66bd49ef077c12f58c85d3696dcc150",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    }
+  ]
+}
