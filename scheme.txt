@@ -1,0 +1,24 @@
+Misiaczki, tutaj krótki opis co sensor wysyła do monitora.
+Każda wiadomość jest w formacie JSON i zawiera zawsze 2 klucze: TYPE i DATA
+TYPE może przybierać wartości META lub DATA, tłumaczyć chyba nie trzeba kiedy co.
+DATA zawiera dane.
+Metadane wysyłane są raz na początku. Potem lecą tylko same dane.
+Przykładowa wiadomość z metadanymi:
+{"TYPE": "META",
+ "DATA":[{"DESCRIPTION": "Host operating system", "DATA": "Linux", "TAG": "OS"},
+         {"DESCRIPTION": "Operating system version","DATA": "4.4.0-119-generic", "TAG": "OS_VER"},
+         {"DESCRIPTION": "Available data fields", "DATA":
+            [{"DESCRIPTION": "Date", "TAG": "DATE"},
+             {"DESCRIPTION": "Session ID", "TAG": "SESSION_ID"},
+             {"DESCRIPTION": "CPU usage in percentage", "TAG": "CPU_USAGE"},
+             {"DESCRIPTION": "RAM usage in percentage", "TAG": "RAM_USAGE"}], "TAG": "AVAILABLE_FIELDS"},
+      {"DESCRIPTION": "Session start date", "DATA": "2018-04-12 18:17:24.826133", "TAG": "SESSION_START_DATE"},
+      {"DESCRIPTION": "Session ID", "DATA": "7add36cf594ab2aee0f3db8a5a0e5592b678c0f7", "TAG": "SESSION_ID"}]}'
+Sensor przysyła informacje o sobie, w tym listę dostępnych metryk wraz z opisami. Czy te opisy są potrzebne do szczęścia, to się jeszcze okaże.
+
+Przykładowe wiadomości z danymi:
+{"TYPE": "DATA", "DATA": [{"SESSION_ID": "7add36cf594ab2aee0f3db8a5a0e5592b678c0f7", "RAM_USAGE": 59.4, "CPU_USAGE": 21.2, "DATE": "2018-04-12 18:17:24.848480"}]}'
+{"TYPE": "DATA", "DATA": [{"SESSION_ID": "7add36cf594ab2aee0f3db8a5a0e5592b678c0f7", "RAM_USAGE": 59.4, "CPU_USAGE": 12.9, "DATE": "2018-04-12 18:17:25.850184"}]}'
+{"TYPE": "DATA", "DATA": [{"SESSION_ID": "7add36cf594ab2aee0f3db8a5a0e5592b678c0f7", "RAM_USAGE": 59.4, "CPU_USAGE": 12.9, "DATE": "2018-04-12 18:17:26.851817"}]}'
+{"TYPE": "DATA", "DATA": [{"SESSION_ID": "7add36cf594ab2aee0f3db8a5a0e5592b678c0f7", "RAM_USAGE": 59.4, "CPU_USAGE": 13.1, "DATE": "2018-04-12 18:17:27.853463"}]}'
+W jednej wiadomości może być wiele pomiarów, w zależności z jakim parametrem się uruchomi serwer.

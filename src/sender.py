@@ -15,7 +15,7 @@ class Sender:
         clientSocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         clientSocket.settimeout(1000)
 
-        clientSSLSocket = ssl.wrap_socket(clientSocket, cert_reqs=ssl.CERT_REQUIRED, ca_certs='./cert.pem')
+        clientSSLSocket = ssl.wrap_socket(clientSocket, cert_reqs=ssl.CERT_REQUIRED, ca_certs=self.certPath)
         clientSSLSocket.connect((self.address, self.port))
         clientSSLSocket.send(data.encode('utf-8'))
         clientSSLSocket.close()
