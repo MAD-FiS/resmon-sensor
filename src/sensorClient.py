@@ -8,14 +8,12 @@ import json
 
 class SensorClient:
     """Main class for Sensor Client. It is responsible for establish connection and send gathered data"""
-    def __init__(self, address, port, interval, bufferSize, certPath):
+    def __init__(self, address, interval, bufferSize):
         """Constructor which takes essential parameters for establish secure connection with server and adjust data interval sending"""
         self.address = address
-        self.port = port
         self.interval = interval
         self.bufferSize = bufferSize
-        self.certPath = certPath
-        self.sender = sender.Sender(address, port, certPath)
+        self.sender = sender.Sender(address)
         self.isMainThreadWorking = False
         self.maxSendAttemps = 1
 
@@ -67,7 +65,9 @@ class SensorClient:
         """Thread function used for sending data"""
 
         try:
-            self.sender.sendData(data)
+            result = self.sender.sendData(data)
+            if result != 200:
+                raise Exception("Cannot send data to server")
             self.sendAttemps = 0
         except Exception as ex:
             self.sendAttemps += 1
