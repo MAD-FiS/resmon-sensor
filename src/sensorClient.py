@@ -8,7 +8,7 @@ import json
 
 class SensorClient:
     """Main class for Sensor Client. It is responsible for establish connection and send gathered data"""
-    def __init__(self, address, interval, bufferSize):
+    def __init__(self, address, interval, bufferSize, nameId):
         """Constructor which takes essential parameters for establish secure connection with server and adjust data interval sending"""
         self.address = address
         self.interval = interval
@@ -16,6 +16,7 @@ class SensorClient:
         self.sender = sender.Sender(address)
         self.isMainThreadWorking = False
         self.maxSendAttemps = 1
+        self.nameId = nameId
 
     def startClient(self):
         """Start Sensor Client by establishing connection"""
@@ -24,7 +25,7 @@ class SensorClient:
         self.sensor = sensor.Sensor()
         self.sensor.prepareModules()
         self.sensorBuffer = sensor.SensorBuffer(self.sensor)
-        self.metaSensor = sensor.MetaSensor(self.sensor)
+        self.metaSensor = sensor.MetaSensor(self.sensor, self.nameId)
 
         self.sendMetaData()
         """After send meta data increase max attemps in case of accidental network failure"""
