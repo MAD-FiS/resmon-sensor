@@ -91,10 +91,11 @@ class MetaSensorModule:
 
 class MetaSensor:
     """Class which is responsible for composing meta data"""
-    def __init__(self, sensor):
+    def __init__(self, sensor, nameId):
         self.sessionId = '0'
         self.generateSessionId()
         self.sensor = sensor
+        self.nameId = nameId
         self.sensor.setSessionId(self.sessionId)
         self.metaModules = []
         self.addMetaModule(MetaSensorModule('OS', 'Host operating system', self.getSystemInfo))
@@ -102,6 +103,7 @@ class MetaSensor:
         self.addMetaModule(MetaSensorModule('AVAILABLE_FIELDS', 'Available data fields', self.getAvailableFields))
         self.addMetaModule(MetaSensorModule('SESSION_START_DATE', 'Session start date', self.getDate))
         self.addMetaModule(MetaSensorModule('SESSION_ID', 'Session ID', self.getSessionId))
+        self.addMetaModule(MetaSensorModule('NAME', 'User friendly identifier', self.getNameId))
 
     def addMetaModule(self, metaModule):
         """Just add metaModule to aray"""
@@ -111,6 +113,10 @@ class MetaSensor:
         """Generate unique hash string"""
         stringToHash = self.getDate() + str(random.random())
         self.sessionId = hashlib.sha1(stringToHash.encode('UTF-8')).hexdigest()
+
+    def getNameId(self):
+        """Getter for user friendly identifier"""
+        return self.nameId
 
     def getDate(self):
         """Getter for date"""
