@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1981343e_a80073f4",
+        "filename": "src/Dockerfile",
+        "patchSetId": 3
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1013788
+      },
+      "writtenOn": "2018-05-22T22:10:52Z",
+      "side": 1,
+      "message": "Please add to readme how to set ip address for own purposes.",
+      "revId": "f910296ab5621e151a49f2f365fa9163eb90c5ab",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    }
+  ]
+}
