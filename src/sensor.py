@@ -9,10 +9,11 @@ import random
 
 class SensorModule:
     """Class which stores particular parameter"""
-    def __init__(self, tag, description, dataGetter):
+    def __init__(self, tag, description, dataGetter, isInMeta):
         self.tag = tag
         self.description = description
         self.dataGetter = dataGetter
+        self.isInMeta = isInMeta
 
 class Sensor:
     """This class is responsible for reading various parameters from system"""
@@ -23,10 +24,10 @@ class Sensor:
 
     def prepareModules(self):
         """Add defined modules. Could be in constructor but tests involves extra function"""
-        self.addSensorModule(SensorModule('DATE', 'Date', self.getDate))
-        self.addSensorModule(SensorModule('SESSION_ID', 'Session ID', self.getSessionId))
-        self.addSensorModule(SensorModule('CPU_USAGE', 'CPU usage in percentage', self.getCpuUsage))
-        self.addSensorModule(SensorModule('RAM_USAGE', 'RAM usage in percentage', self.getRamUsage))
+        self.addSensorModule(SensorModule('DATE', 'Date', self.getDate, False))
+        self.addSensorModule(SensorModule('SESSION_ID', 'Session ID', self.getSessionId, False))
+        self.addSensorModule(SensorModule('CPU_USAGE', 'CPU usage in percentage', self.getCpuUsage, True))
+        self.addSensorModule(SensorModule('RAM_USAGE', 'RAM usage in percentage', self.getRamUsage, True))
 
     def addSensorModule(self, module):
         """Just adds modules to array"""
@@ -138,8 +139,9 @@ class MetaSensor:
         """Getter for available fields"""
         fields = []
         for module in self.sensor.modules:
-            record = {'TAG':module.tag, 'DESCRIPTION':module.description}
-            fields.append(record)
+            if module.isInMeta:
+                record = {'TAG':module.tag, 'DESCRIPTION':module.description}
+                fields.append(record)
         return fields
 
     def getData(self):
@@ -147,6 +149,14 @@ class MetaSensor:
         returnData = []
         for metaModule in self.metaModules:
             record = {'TAG':metaModule.tag, 'DESCRIPTION':metaModule.description, 'DATA':metaModule.dataGetter()}
+            returnData.append(record)
+        return returnData
+
+    def getData2(self):
+        """Returns whole stored data ver2"""
+        returnData = []
+        for metaModule in self.metaModules:
+            record = {metaModule.tag:metaModule.dataGetter()}
             returnData.append(record)
         return returnData
 
