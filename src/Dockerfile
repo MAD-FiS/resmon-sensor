@@ -18,5 +18,5 @@ ENV NAME World
 
 
 # Run app.py when the container launches
-ENTRYPOINT ["python3", "/app/main.py","-a", "http://217.182.73.67:4001", "-i", "1", "-b", "10", "-n", "workstation1"]
+ENTRYPOINT ["python3", "/app/main.py","-a", "http://217.182.73.67:4001", "-i", "30", "-b", "10", "-n", "workstation1"]
 
