@@ -3,6 +3,7 @@ from unittest.mock import MagicMock
 
 import sensor
 
+
 class TestSensor(unittest.TestCase):
 
     def test_sensorBuffer(self):

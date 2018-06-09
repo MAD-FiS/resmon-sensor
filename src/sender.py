@@ -1,6 +1,7 @@
 """Module responsible for sending data to server"""
 import requests
 
+
 class Sender:
     """Class which maintain connection with server"""
     def __init__(self, address):
@@ -12,5 +13,3 @@ class Sender:
         requestResponse = requests.post(self.address, data=data)
         print(str(requestResponse.status_code) + " " + requestResponse.reason)
         return requestResponse.status_code
-
-
