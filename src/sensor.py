@@ -15,19 +15,30 @@ class SensorModule:
         self.dataGetter = dataGetter
         self.isInMeta = isInMeta
 
+
 class Sensor:
     """This class is responsible for reading various parameters from system"""
     def __init__(self):
         self.sessionId = '0'
         self.modules = []
 
-
     def prepareModules(self):
-        """Add defined modules. Could be in constructor but tests involves extra function"""
-        self.addSensorModule(SensorModule('DATE', 'Date', self.getDate, False))
-        self.addSensorModule(SensorModule('SESSION_ID', 'Session ID', self.getSessionId, False))
-        self.addSensorModule(SensorModule('CPU_USAGE', 'CPU usage in percentage', self.getCpuUsage, True))
-        self.addSensorModule(SensorModule('RAM_USAGE', 'RAM usage in percentage', self.getRamUsage, True))
+        """
+        Add defined modules.
+        Could be in constructor but tests involves extra function
+        """
+        self.addSensorModule(SensorModule('DATE',
+                                          'Date',
+                                          self.getDate, False))
+        self.addSensorModule(SensorModule('SESSION_ID',
+                                          'Session ID',
+                                          self.getSessionId, False))
+        self.addSensorModule(SensorModule('CPU_USAGE',
+                                          'CPU usage in percentage',
+                                          self.getCpuUsage, True))
+        self.addSensorModule(SensorModule('RAM_USAGE',
+                                          'RAM usage in percentage',
+                                          self.getRamUsage, True))
 
     def addSensorModule(self, module):
         """Just adds modules to array"""
@@ -60,6 +71,7 @@ class Sensor:
         """Gette for RAM usagre in percenrage"""
         return psutil.virtual_memory()[2]
 
+
 class SensorBuffer:
     """Class responsible for buffering data gathered by sensor"""
     def __init__(self, sensor):
@@ -83,12 +95,14 @@ class SensorBuffer:
         """Clears buffer"""
         self.measurements = []
 
+
 class MetaSensorModule:
     """Class which stores particular parameter used in metadata"""
     def __init__(self, tag, description, dataGetter):
         self.tag = tag
         self.description = description
         self.dataGetter = dataGetter
+
 
 class MetaSensor:
     """Class which is responsible for composing meta data"""
@@ -99,12 +113,24 @@ class MetaSensor:
         self.nameId = nameId
         self.sensor.setSessionId(self.sessionId)
         self.metaModules = []
-        self.addMetaModule(MetaSensorModule('OS', 'Host operating system', self.getSystemInfo))
-        self.addMetaModule(MetaSensorModule('OS_VER', 'Operating system version', self.getSystemVersion))
-        self.addMetaModule(MetaSensorModule('AVAILABLE_FIELDS', 'Available data fields', self.getAvailableFields))
-        self.addMetaModule(MetaSensorModule('SESSION_START_DATE', 'Session start date', self.getDate))
-        self.addMetaModule(MetaSensorModule('SESSION_ID', 'Session ID', self.getSessionId))
-        self.addMetaModule(MetaSensorModule('NAME', 'User friendly identifier', self.getNameId))
+        self.addMetaModule(MetaSensorModule('OS',
+                                            'Host operating system',
+                                            self.getSystemInfo))
+        self.addMetaModule(MetaSensorModule('OS_VER',
+                                            'Operating system version',
+                                            self.getSystemVersion))
+        self.addMetaModule(MetaSensorModule('AVAILABLE_FIELDS',
+                                            'Available data fields',
+                                            self.getAvailableFields))
+        self.addMetaModule(MetaSensorModule('SESSION_START_DATE',
+                                            'Session start date',
+                                            self.getDate))
+        self.addMetaModule(MetaSensorModule('SESSION_ID',
+                                            'Session ID',
+                                            self.getSessionId))
+        self.addMetaModule(MetaSensorModule('NAME',
+                                            'User friendly identifier',
+                                            self.getNameId))
 
     def addMetaModule(self, metaModule):
         """Just add metaModule to aray"""
@@ -140,7 +166,7 @@ class MetaSensor:
         fields = []
         for module in self.sensor.modules:
             if module.isInMeta:
-                record = {'TAG':module.tag, 'DESCRIPTION':module.description}
+                record = {'TAG': module.tag, 'DESCRIPTION': module.description}
                 fields.append(record)
         return fields
 
@@ -148,7 +174,9 @@ class MetaSensor:
         """Returns whole stored data"""
         returnData = []
         for metaModule in self.metaModules:
-            record = {'TAG':metaModule.tag, 'DESCRIPTION':metaModule.description, 'DATA':metaModule.dataGetter()}
+            record = {'TAG': metaModule.tag,
+                      'DESCRIPTION': metaModule.description,
+                      'DATA': metaModule.dataGetter()}
             returnData.append(record)
         return returnData
 
@@ -156,7 +184,6 @@ class MetaSensor:
         """Returns whole stored data ver2"""
         returnData = []
         for metaModule in self.metaModules:
-            record = {metaModule.tag:metaModule.dataGetter()}
+            record = {metaModule.tag: metaModule.dataGetter()}
             returnData.append(record)
         return returnData
-
