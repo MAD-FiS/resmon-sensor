@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "77f8ed5f_0f01493d",
+        "filename": "src/sensor.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 173,
+      "author": {
+        "id": 1013788
+      },
+      "writtenOn": "2018-06-13T20:26:39Z",
+      "side": 1,
+      "message": "fix typo",
+      "range": {
+        "startLine": 171,
+        "startChar": 9,
+        "endLine": 173,
+        "endChar": 58
+      },
+      "revId": "0b97b2a26215a86c5f4735c05775d260174d34e9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    }
+  ]
+}
