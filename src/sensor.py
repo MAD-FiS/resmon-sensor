@@ -94,7 +94,7 @@ class Sensor:
 
     def getCpuFrequency(self):
         """Getter for CPU usage in percentage"""
-        return psutil.cpu_freq()
+        return round(psutil.cpu_freq().current)
 
     def getRamUsage(self):
         """Getter for RAM usagre in percenrage"""
@@ -106,7 +106,7 @@ class Sensor:
 
     def getVirtualMemAvailable(self):
         """Getter for available virtual memory"""
-        return psutil.virtual_memory().availalbe
+        return psutil.virtual_memory().available
 
     def getLoggedUsersCount(self):
         """Getter for amount of logged users"""
