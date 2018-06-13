@@ -47,10 +47,7 @@ class SensorClient:
     def sendMetaData(self):
         """Sends meta data to server"""
         data = self.metaSensor.getData()
-        data2 = self.metaSensor.getData2()
         jsonData = self.getJsonString(data, isMeta=True)
-        jsonData2 = self.getJsonString(data2, isMeta=True, isNewMeta=True)
-        self.sendingThreadFunction(jsonData2)
         self.sendingThreadFunction(jsonData)
 
     def gatherAndSendData(self):
@@ -66,25 +63,21 @@ class SensorClient:
                 args=(jsonData, ))
             self.sendingThread.start()
 
-    def getJsonString(self, data, isMeta=False, isNewMeta=False):
+    def getJsonString(self, data, isMeta=False):
         """
         Wrape data in order to distinguish
         data and meta and generate JSON string
         """
         wrappedData = {}
         if isMeta:
-            if isNewMeta:
-                wrappedData['TYPE'] = 'META2'
-            else:
-                wrappedData['TYPE'] = 'META'
+            wrappedData['type'] = 'meta'
         else:
-            wrappedData['TYPE'] = 'DATA'
-        wrappedData['DATA'] = data
+            wrappedData['type'] = 'data'
+        wrappedData['data'] = data
         return json.dumps(wrappedData)
 
     def sendingThreadFunction(self, data):
         """Thread function used for sending data"""
-
         try:
             result = self.sender.sendData(data)
             if result != 200:

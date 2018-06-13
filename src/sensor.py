@@ -9,9 +9,10 @@ import random
 
 class SensorModule:
     """Class which stores particular parameter"""
-    def __init__(self, tag, description, dataGetter, isInMeta):
+    def __init__(self, tag, description, unit, dataGetter, isInMeta):
         self.tag = tag
         self.description = description
+        self.unit = unit
         self.dataGetter = dataGetter
         self.isInMeta = isInMeta
 
@@ -27,18 +28,34 @@ class Sensor:
         Add defined modules.
         Could be in constructor but tests involves extra function
         """
-        self.addSensorModule(SensorModule('DATE',
+        self.addSensorModule(SensorModule('date',
                                           'Date',
-                                          self.getDate, False))
-        self.addSensorModule(SensorModule('SESSION_ID',
+                                          '', self.getDate, False))
+        self.addSensorModule(SensorModule('session_id',
                                           'Session ID',
-                                          self.getSessionId, False))
-        self.addSensorModule(SensorModule('CPU_USAGE',
+                                          '', self.getSessionId, False))
+        self.addSensorModule(SensorModule('cpu_usage',
                                           'CPU usage in percentage',
-                                          self.getCpuUsage, True))
-        self.addSensorModule(SensorModule('RAM_USAGE',
+                                          '%', self.getCpuUsage, True))
+        self.addSensorModule(SensorModule('cpu_frequency',
+                                          'CPU frequency in MHz',
+                                          'MHz', self.getCpuFrequency, True))
+        self.addSensorModule(SensorModule('ram_usage',
                                           'RAM usage in percentage',
-                                          self.getRamUsage, True))
+                                          '%', self.getRamUsage, True))
+        self.addSensorModule(SensorModule('virtual_mem_total',
+                                          'Total virtual memory',
+                                          'bytes', self.getVirtualMemTotal, True))
+        self.addSensorModule(SensorModule('virtual_mem_available',
+                                          'Available virtual memory',
+                                          'bytes', self.getVirtualMemAvailable, True))
+        self.addSensorModule(SensorModule('legged_users_count',
+                                          'Amount of currently logged users',
+                                          'quantity', self.getLoggedUsersCount, True))
+        self.addSensorModule(SensorModule('processes_count',
+                                          'Amount of currently running processes',
+                                          'quantity', self.getProcessesCount, True))
+
 
     def addSensorModule(self, module):
         """Just adds modules to array"""
@@ -67,9 +84,29 @@ class Sensor:
         """Getter for CPU usage in percentage"""
         return psutil.cpu_percent()
 
+    def getCpuFrequency(self):
+        """Getter for CPU usage in percentage"""
+        return psutil.cpu_freq()
+
     def getRamUsage(self):
-        """Gette for RAM usagre in percenrage"""
-        return psutil.virtual_memory()[2]
+        """Getter for RAM usagre in percenrage"""
+        return psutil.virtual_memory().percent
+
+    def getVirtualMemTotal(self):
+        """Getter for total virtual memory"""
+        return psutil.virtual_memory().total
+
+    def getVirtualMemAvailable(self):
+        """Getter for available virtual memory"""
+        return psutil.virtual_memory().availalbe
+
+    def getLoggedUsersCount(self):
+        """Getter for amount of logged users"""
+        return len(psutil.users())
+
+    def getProcessesCount(self):
+        """Getter for amount of logged users"""
+        return len(psutil.pids())
 
 
 class SensorBuffer:
@@ -113,22 +150,22 @@ class MetaSensor:
         self.nameId = nameId
         self.sensor.setSessionId(self.sessionId)
         self.metaModules = []
-        self.addMetaModule(MetaSensorModule('OS',
+        self.addMetaModule(MetaSensorModule('os',
                                             'Host operating system',
                                             self.getSystemInfo))
-        self.addMetaModule(MetaSensorModule('OS_VER',
+        self.addMetaModule(MetaSensorModule('os_ver',
                                             'Operating system version',
                                             self.getSystemVersion))
-        self.addMetaModule(MetaSensorModule('AVAILABLE_FIELDS',
-                                            'Available data fields',
+        self.addMetaModule(MetaSensorModule('metrics',
+                                            'Available metrics',
                                             self.getAvailableFields))
-        self.addMetaModule(MetaSensorModule('SESSION_START_DATE',
+        self.addMetaModule(MetaSensorModule('sesstion_start_date',
                                             'Session start date',
                                             self.getDate))
-        self.addMetaModule(MetaSensorModule('SESSION_ID',
+        self.addMetaModule(MetaSensorModule('session_id',
                                             'Session ID',
                                             self.getSessionId))
-        self.addMetaModule(MetaSensorModule('NAME',
+        self.addMetaModule(MetaSensorModule('hostname',
                                             'User friendly identifier',
                                             self.getNameId))
 
@@ -166,24 +203,25 @@ class MetaSensor:
         fields = []
         for module in self.sensor.modules:
             if module.isInMeta:
-                record = {'TAG': module.tag, 'DESCRIPTION': module.description}
+                record = {'metric_id': module.tag,
+                          'description': module.description,
+                          'unit': module.unit}
                 fields.append(record)
         return fields
 
-    def getData(self):
-        """Returns whole stored data"""
+    def getDescriptions(self):
+        """Returns description for metadatas"""
         returnData = []
         for metaModule in self.metaModules:
-            record = {'TAG': metaModule.tag,
-                      'DESCRIPTION': metaModule.description,
-                      'DATA': metaModule.dataGetter()}
+            record = {metaModule.tag: metaModule.description}
             returnData.append(record)
         return returnData
 
-    def getData2(self):
+    def getData(self):
         """Returns whole stored data ver2"""
         returnData = []
         for metaModule in self.metaModules:
             record = {metaModule.tag: metaModule.dataGetter()}
             returnData.append(record)
+        returnData.append({'meta_descriptions':self.getDescriptions()})
         return returnData
