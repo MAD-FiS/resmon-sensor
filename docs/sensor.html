@@ -59,11 +59,11 @@
 
 <dl><dt><a name="MetaSensor-getAvailableFields"><strong>getAvailableFields</strong></a>(self)</dt><dd><tt>Getter&nbsp;for&nbsp;available&nbsp;fields</tt></dd></dl>
 
-<dl><dt><a name="MetaSensor-getData"><strong>getData</strong></a>(self)</dt><dd><tt>Returns&nbsp;whole&nbsp;stored&nbsp;data</tt></dd></dl>
-
-<dl><dt><a name="MetaSensor-getData2"><strong>getData2</strong></a>(self)</dt><dd><tt>Returns&nbsp;whole&nbsp;stored&nbsp;data&nbsp;ver2</tt></dd></dl>
+<dl><dt><a name="MetaSensor-getData"><strong>getData</strong></a>(self)</dt><dd><tt>Returns&nbsp;whole&nbsp;stored&nbsp;data&nbsp;ver</tt></dd></dl>
 
 <dl><dt><a name="MetaSensor-getDate"><strong>getDate</strong></a>(self)</dt><dd><tt>Getter&nbsp;for&nbsp;date</tt></dd></dl>
+
+<dl><dt><a name="MetaSensor-getDescriptions"><strong>getDescriptions</strong></a>(self)</dt><dd><tt>Returns&nbsp;description&nbsp;for&nbsp;metadatas</tt></dd></dl>
 
 <dl><dt><a name="MetaSensor-getNameId"><strong>getNameId</strong></a>(self)</dt><dd><tt>Getter&nbsp;for&nbsp;user&nbsp;friendly&nbsp;identifier</tt></dd></dl>
 
@@ -117,13 +117,23 @@ Data descriptors defined here:<br>
 
 <dl><dt><a name="Sensor-getAllData"><strong>getAllData</strong></a>(self)</dt><dd><tt>Return&nbsp;all&nbsp;data&nbsp;and&nbsp;return&nbsp;it&nbsp;in&nbsp;dictionary</tt></dd></dl>
 
+<dl><dt><a name="Sensor-getCpuFrequency"><strong>getCpuFrequency</strong></a>(self)</dt><dd><tt>Getter&nbsp;for&nbsp;CPU&nbsp;usage&nbsp;in&nbsp;percentage</tt></dd></dl>
+
 <dl><dt><a name="Sensor-getCpuUsage"><strong>getCpuUsage</strong></a>(self)</dt><dd><tt>Getter&nbsp;for&nbsp;CPU&nbsp;usage&nbsp;in&nbsp;percentage</tt></dd></dl>
 
 <dl><dt><a name="Sensor-getDate"><strong>getDate</strong></a>(self)</dt><dd><tt>Getter&nbsp;for&nbsp;date</tt></dd></dl>
 
-<dl><dt><a name="Sensor-getRamUsage"><strong>getRamUsage</strong></a>(self)</dt><dd><tt>Gette&nbsp;for&nbsp;RAM&nbsp;usagre&nbsp;in&nbsp;percenrage</tt></dd></dl>
+<dl><dt><a name="Sensor-getLoggedUsersCount"><strong>getLoggedUsersCount</strong></a>(self)</dt><dd><tt>Getter&nbsp;for&nbsp;amount&nbsp;of&nbsp;logged&nbsp;users</tt></dd></dl>
+
+<dl><dt><a name="Sensor-getProcessesCount"><strong>getProcessesCount</strong></a>(self)</dt><dd><tt>Getter&nbsp;for&nbsp;amount&nbsp;of&nbsp;logged&nbsp;users</tt></dd></dl>
+
+<dl><dt><a name="Sensor-getRamUsage"><strong>getRamUsage</strong></a>(self)</dt><dd><tt>Getter&nbsp;for&nbsp;RAM&nbsp;usagre&nbsp;in&nbsp;percenrage</tt></dd></dl>
 
 <dl><dt><a name="Sensor-getSessionId"><strong>getSessionId</strong></a>(self)</dt><dd><tt>Getter&nbsp;for&nbsp;session&nbsp;ID</tt></dd></dl>
+
+<dl><dt><a name="Sensor-getVirtualMemAvailable"><strong>getVirtualMemAvailable</strong></a>(self)</dt><dd><tt>Getter&nbsp;for&nbsp;available&nbsp;virtual&nbsp;memory</tt></dd></dl>
+
+<dl><dt><a name="Sensor-getVirtualMemTotal"><strong>getVirtualMemTotal</strong></a>(self)</dt><dd><tt>Getter&nbsp;for&nbsp;total&nbsp;virtual&nbsp;memory</tt></dd></dl>
 
 <dl><dt><a name="Sensor-prepareModules"><strong>prepareModules</strong></a>(self)</dt><dd><tt>Add&nbsp;defined&nbsp;modules.<br>
 Could&nbsp;be&nbsp;in&nbsp;constructor&nbsp;but&nbsp;tests&nbsp;involves&nbsp;extra&nbsp;function</tt></dd></dl>
@@ -176,7 +186,7 @@ Data descriptors defined here:<br>
 <td colspan=2><tt>Class&nbsp;which&nbsp;stores&nbsp;particular&nbsp;parameter<br>&nbsp;</tt></td></tr>
 <tr><td>&nbsp;</td>
 <td width="100%">Methods defined here:<br>
-<dl><dt><a name="SensorModule-__init__"><strong>__init__</strong></a>(self, tag, description, dataGetter, isInMeta)</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+<dl><dt><a name="SensorModule-__init__"><strong>__init__</strong></a>(self, tag, description, unit, dataGetter, isInMeta)</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
 
 <hr>
 Data descriptors defined here:<br>
