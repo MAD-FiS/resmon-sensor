@@ -5,18 +5,15 @@ FROM python:3.6
 WORKDIR /app
 
 # Copy the current directory contents into the container at /app
-ADD . /app
+ADD ./install-sensor.sh /app
 
 # Install any needed packages specified in requirements.txt
-RUN pip3 install --trusted-host pypi.python.org -r requirements
+RUN /app/install-sensor.sh --quiet
 
 # Make port 80 available to the world outside this container
 EXPOSE 4001
 
-# Define environment variable
-ENV NAME World
-
 
 # Run app.py when the container launches
-ENTRYPOINT ["python3", "/app/main.py","-a", "http://217.182.73.67:4001", "-i", "15", "-b", "10", "-n", "workstation1"]
+ENTRYPOINT ["/app/resmon-sensor","-a", "http://217.182.73.67:4001", "-i", "15", "-b", "10", "-n", "jenkins"]
 

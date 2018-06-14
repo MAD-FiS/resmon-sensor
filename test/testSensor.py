@@ -1,12 +1,12 @@
 import unittest
-import sensor
+import src.sensor
 from unittest.mock import MagicMock
 
 
 class TestSensor(unittest.TestCase):
 
     def test_sensorBuffer(self):
-        sensorObj = sensor.Sensor()
+        sensorObj = src.sensor.Sensor()
         sensorObj.getCpuUsage = MagicMock(return_value=20)
         sensorObj.getCpuFrequency = MagicMock(return_value=2000)
         sensorObj.getRamUsage = MagicMock(return_value=50)
@@ -15,7 +15,7 @@ class TestSensor(unittest.TestCase):
         sensorObj.getLoggedUsersCount = MagicMock(return_value=10)
         sensorObj.getProcessesCount = MagicMock(return_value=235)
         sensorObj.prepareModules()
-        sensorBufferObj = sensor.SensorBuffer(sensorObj)
+        sensorBufferObj = src.sensor.SensorBuffer(sensorObj)
         sensorBufferObj.performMeasurement()
         data = sensorBufferObj.getData()
 
@@ -29,7 +29,7 @@ class TestSensor(unittest.TestCase):
         self.assertEqual(data[0]['processes_count'], 235)
 
     def test_sensor(self):
-        sensorObj = sensor.Sensor()
+        sensorObj = src.sensor.Sensor()
         sensorObj.getCpuUsage = MagicMock(return_value=20)
         sensorObj.getCpuFrequency = MagicMock(return_value=2000)
         sensorObj.getRamUsage = MagicMock(return_value=50)
@@ -47,3 +47,7 @@ class TestSensor(unittest.TestCase):
         self.assertEqual(data['virtual_mem_available'], 2000)
         self.assertEqual(data['legged_users_count'], 10)
         self.assertEqual(data['processes_count'], 235)
+
+
+if __name__ == '__main__':
+    unittest.main()

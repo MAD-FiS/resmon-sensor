@@ -1,7 +1,7 @@
 """ Main source file used for running Sensor Client"""
 
 import argparse
-import sensorClient
+import src.sensorClient
 
 if __name__ == '__main__':
     """Main function which provides argument parser and run Sensor Client"""
@@ -19,6 +19,6 @@ if __name__ == '__main__':
                         help='User friendly identifier')
     args = parser.parse_args()
 
-    sensorClient = sensorClient.SensorClient(args.address, args.interval,
-                                             args.buffer, args.name)
+    sensorClient = src.sensorClient.SensorClient(args.address, args.interval,
+                                                 args.buffer, args.name)
     sensorClient.startClient()

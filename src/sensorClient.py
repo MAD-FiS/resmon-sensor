@@ -1,7 +1,7 @@
 """Module with SensorClient class"""
 
-import sensor
-import sender
+import src.sensor
+import src.sender
 import time
 import threading
 import json
@@ -20,7 +20,7 @@ class SensorClient:
         self.address = address
         self.interval = interval
         self.bufferSize = bufferSize
-        self.sender = sender.Sender(address)
+        self.sender = src.sender.Sender(address)
         self.isMainThreadWorking = False
         self.maxSendAttemps = 1
         self.nameId = nameId
@@ -29,10 +29,10 @@ class SensorClient:
         """Start Sensor Client by establishing connection"""
         self.isMainThreadWorking = True
         self.sendAttemps = 0
-        self.sensor = sensor.Sensor()
+        self.sensor = src.sensor.Sensor()
         self.sensor.prepareModules()
-        self.sensorBuffer = sensor.SensorBuffer(self.sensor)
-        self.metaSensor = sensor.MetaSensor(self.sensor, self.nameId)
+        self.sensorBuffer = src.sensor.SensorBuffer(self.sensor)
+        self.metaSensor = src.sensor.MetaSensor(self.sensor, self.nameId)
 
         self.sendMetaData()
         # After send meta data increase max attemps
