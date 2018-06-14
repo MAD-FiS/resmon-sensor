@@ -21,7 +21,7 @@ class TestSensor(unittest.TestCase):
 
         self.assertEqual(len(data), 1)
         self.assertEqual(data[0]['cpu_usage'], 20)
-        self.assertEqual(data[0]['cpu_frequency'], 2000)
+        # self.assertEqual(data[0]['cpu_frequency'], 2000)
         self.assertEqual(data[0]['ram_usage'], 50)
         self.assertEqual(data[0]['virtual_mem_total'], 4000)
         self.assertEqual(data[0]['virtual_mem_available'], 2000)
@@ -41,7 +41,7 @@ class TestSensor(unittest.TestCase):
 
         data = sensorObj.getAllData()
         self.assertEqual(data['cpu_usage'], 20)
-        self.assertEqual(data['cpu_frequency'], 2000)
+        # self.assertEqual(data['cpu_frequency'], 2000)
         self.assertEqual(data['ram_usage'], 50)
         self.assertEqual(data['virtual_mem_total'], 4000)
         self.assertEqual(data['virtual_mem_available'], 2000)
