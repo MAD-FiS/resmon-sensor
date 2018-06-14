@@ -1,0 +1,4 @@
+#!/bin/bash
+
+source ./resmon-sensor.env
+python3 ./src/main.py $@

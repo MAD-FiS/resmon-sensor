@@ -1,0 +1,41 @@
+#!/bin/bash
+
+function untar_payload()
+{
+    match=$(grep --text --line-number '^ARCHIVE_DATA:$' $0 | cut -d ':' -f 1)
+    payload_start=$((match + 1))
+    tail -n +$payload_start $0 | tar -xzvf -
+}
+
+echo "ResMon client installer"
+echo "-----------------------"
+echo ""
+
+echo "Please check if you have installed Python 3.6"
+
+quiet=0
+ask=0
+if [[ "$1" == '--quiet' ]]; then
+    quiet=1
+else
+    read -p "Can I unpack files? " ans
+    if [[ "${ans:0:1}"  ||  "${ans:0:1}" ]]; then
+        ask=1
+    fi
+fi
+
+if [[ $ask -eq 1 || $quiet -eq 1 ]]; then
+    echo "Unpacking files..."
+    untar_payload >> /dev/null
+
+    echo "Files are unpacked"
+
+    echo "Install  requirements..."
+    pip3 install --trusted-host pypi.python.org --no-cache-dir -r requirements --user &&
+        echo "All requirements have been installed successfully"
+
+    exit 0
+fi
+
+echo "You interrupted this installation"
+exit 1
