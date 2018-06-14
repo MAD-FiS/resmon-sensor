@@ -40,10 +40,10 @@ class Sensor:
                                           'CPU usage in percentage',
                                           '%',
                                           self.getCpuUsage, True))
-        self.addSensorModule(SensorModule('cpu_frequency',
-                                          'CPU frequency in MHz',
-                                          'MHz',
-                                          self.getCpuFrequency, True))
+        # self.addSensorModule(SensorModule('cpu_frequency',
+        #                                   'CPU frequency in MHz',
+        #                                   'MHz',
+        #                                   self.getCpuFrequency, True))
         self.addSensorModule(SensorModule('ram_usage',
                                           'RAM usage in percentage',
                                           '%',
