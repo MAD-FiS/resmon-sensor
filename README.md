@@ -1,5 +1,5 @@
 # resmon-sensor
-Repository for a sensor component, which is part of resmon product.
+Repository for a sensor component, which is part of resmon product. This application can work on Linux and Windows.
 
 # Usage
 
@@ -49,3 +49,19 @@ and:
 docker run -it resmon-sensor
 ```
 Then you can run there this application.
+
+# Windows
+
+## Instalation
+1. Install Python 3.6
+2. Install `pip` tool for Python in that version
+3. Execute following command:
+```bash
+python -m pip install --trusted-host pypi.python.org --no-cache-dir -r requirements --user
+```
+
+## Usage
+You can run this application by executing the following command:
+```bash
+python ./src/main.py
+```
