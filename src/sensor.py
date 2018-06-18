@@ -40,10 +40,6 @@ class Sensor:
                                           'CPU usage in percentage',
                                           '%',
                                           self.getCpuUsage, True))
-        # self.addSensorModule(SensorModule('cpu_frequency',
-        #                                   'CPU frequency in MHz',
-        #                                   'MHz',
-        #                                   self.getCpuFrequency, True))
         self.addSensorModule(SensorModule('ram_usage',
                                           'RAM usage in percentage',
                                           '%',
@@ -91,10 +87,6 @@ class Sensor:
     def getCpuUsage(self):
         """Getter for CPU usage in percentage"""
         return psutil.cpu_percent()
-
-    def getCpuFrequency(self):
-        """Getter for CPU usage in percentage"""
-        return round(psutil.cpu_freq().current)
 
     def getRamUsage(self):
         """Getter for RAM usagre in percenrage"""
