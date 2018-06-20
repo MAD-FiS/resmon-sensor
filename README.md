@@ -1,10 +1,16 @@
 # resmon-sensor
 Repository for a sensor component, which is part of resmon product. This application can work on Linux and Windows.
 
-# Usage
+# Usage linux
 
 ```bash
-./resmon-sensor [-h] [-c CONFIG] [-l LIMIT] [--register] [-v]
+./resmon-sensor [-h] [-b BUFFER] -a ADDRESS -i INTERVAL -n NAME
+```
+
+# Usage windows
+
+```cmd
+resmon-sensor-win [-h] [-b BUFFER] -a ADDRESS -i INTERVAL -n NAME
 ```
 
 ### Options
@@ -16,7 +22,7 @@ Repository for a sensor component, which is part of resmon product. This applica
 | **-b _BUFFER_**, **--buffer _BUFFER_**       | 10            | Messages buffer size                              |
 | **-n _NAME_**, **--name _NAME_**             | ---           | User friendly identifier                          |
 
-#Instalation
+#Installation linux
 We provide single file `install.sh` which is used to install this application. It's enough that you just run it as following:
 ```bash
 ./install.sh [--quiet]
@@ -24,6 +30,13 @@ We provide single file `install.sh` which is used to install this application. I
 Later you have to accept unpacking files. It's automatically accepted if you choose option _--quiet_.
 Application will be installed in the same place where script `install.sh`
 
+#Installation windows
+We are assuming that python (3.5 or later) and pip are already installed. It's enough that you just run it as following:
+```cmd
+install-win [--quiet]
+```
+Script installs all necessary dependencies
+ 
 #For developers
 
 You can run some scripts to make your developing process faster and more comfortable.
