@@ -23,7 +23,7 @@ class TestSensor(unittest.TestCase):
         self.assertEqual(data[0]['ram_usage'], 50)
         self.assertEqual(data[0]['virtual_mem_total'], 4000)
         self.assertEqual(data[0]['virtual_mem_available'], 2000)
-        self.assertEqual(data[0]['legged_users_count'], 10)
+        self.assertEqual(data[0]['logged_users_count'], 10)
         self.assertEqual(data[0]['processes_count'], 235)
 
     def test_sensor(self):
@@ -41,7 +41,7 @@ class TestSensor(unittest.TestCase):
         self.assertEqual(data['ram_usage'], 50)
         self.assertEqual(data['virtual_mem_total'], 4000)
         self.assertEqual(data['virtual_mem_available'], 2000)
-        self.assertEqual(data['legged_users_count'], 10)
+        self.assertEqual(data['logged_users_count'], 10)
         self.assertEqual(data['processes_count'], 235)
 
 

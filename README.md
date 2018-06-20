@@ -5,7 +5,7 @@ This application can work on Linux, Windows and Mac OS (in a similar way like on
 **Info!** All path existing in this file are considered 
 as being used in project/install root directory.
 
-# Usage
+# Usage linux
 
 ## on Linux
 ```bash
@@ -16,7 +16,7 @@ Options are described in [this section](#options)
 ## on Windows
 You can run this application by executing the following command:
 ```bash
-python ./src/main.py [-h|--help] [-a|--address ADDRESS] [-i|--interval INTERVAL] [-b|--buffer BUFFER] [-n|--name NAME]
+resmon-sensor-win [-h|--help] [-a|--address ADDRESS] [-i|--interval INTERVAL] [-b|--buffer BUFFER] [-n|--name NAME]
 ```
 Options are described in [this section](#options)
 
@@ -29,10 +29,12 @@ Options are described in [this section](#options)
 | **-b _BUFFER_**, **--buffer _BUFFER_**       | 10            | Messages buffer size                              |
 | **-n _NAME_**, **--name _NAME_**             | ---           | User friendly identifier                          |
 
-#Instalation
+# Instalation
 
 ## on Linux
-We provide single file `install-sensor.sh` which is used to install this application. It's enough that you just run it as following:
+
+We provide single file `install-sensor.sh` which is used to install this application. 
+It's enough that you just run it as following:
 ```bash
 ./install-sensor.sh [--quiet]
 ```
@@ -40,14 +42,14 @@ Later you have to accept unpacking files. It's automatically accepted if you cho
 Application will be installed in the same place where script `install-sensor.sh`
 
 ## on Windows
-1. Install Python 3.6
-2. Install `pip` tool for Python in that version
-3. Execute following command:
-```bash
-python -m pip install --trusted-host pypi.python.org --no-cache-dir -r ./data/requirements --user
-```
 
-#For developers
+We are assuming that python (3.5 or later) and pip are already installed. 
+It's enough that you just run the file `install-win.bat` which is provided by us:
+```cmd
+install-win [--quiet]
+```
+ 
+# For developers
 
 **Info!** This instruction is written for developers who use Linux operating system.
 
