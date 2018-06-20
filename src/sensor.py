@@ -52,7 +52,7 @@ class Sensor:
                                           'Available virtual memory',
                                           'bytes',
                                           self.getVirtualMemAvailable, True))
-        self.addSensorModule(SensorModule('legged_users_count',
+        self.addSensorModule(SensorModule('logged_users_count',
                                           'Amount of currently logged users',
                                           'quantity',
                                           self.getLoggedUsersCount, True))
