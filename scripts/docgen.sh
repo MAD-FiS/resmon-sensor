@@ -2,7 +2,7 @@
 
 # Generates python documentation. Move html files to docs dictionary
 if [ -z ${RESMONSENSORENV+x} ]; then
-    source ./resmon-sensor.env
+    source ./data/resmon-sensor.env
 fi
 
 rm -rf ./docs

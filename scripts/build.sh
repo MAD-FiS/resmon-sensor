@@ -11,7 +11,8 @@ cat ./scripts/install.template > install-sensor.sh
 echo "ARCHIVE_DATA:" >> install-sensor.sh
 echo "- Install file is created"
 
-tar -czvf tmp.tar.gz src resmon-sensor README.md requirements resmon-sensor.env >> /dev/null
+ELEMENTS=`cat ./data/elements.txt`
+tar -czvf tmp.tar.gz $ELEMENTS >> /dev/null
 cat tmp.tar.gz >> install-sensor.sh
 rm tmp.tar.gz
 echo "- Required data is compressed and included"
