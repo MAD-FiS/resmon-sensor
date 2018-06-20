@@ -31,7 +31,7 @@ if [[ $ask -eq 1 || $quiet -eq 1 ]]; then
     echo "Files are unpacked"
 
     echo "Install  requirements..."
-    pip3 install --trusted-host pypi.python.org --no-cache-dir -r requirements --user &&
+    pip3 install --trusted-host pypi.python.org --no-cache-dir -r ./data/requirements --user &&
         echo "All requirements have been installed successfully"
 
     exit 0
