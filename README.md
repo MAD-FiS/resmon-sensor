@@ -1,13 +1,26 @@
 # resmon-sensor
-Repository for a sensor component, which is part of resmon product. This application can work on Linux and Windows.
+Repository for a sensor component, which is part of resmon product. 
+This application can work on Linux and Windows.
+
+**Info!** All path existing in this file are considered 
+as being used in project/install root directory.
 
 # Usage
 
+## on Linux
 ```bash
-./resmon-sensor [-h] [-c CONFIG] [-l LIMIT] [--register] [-v]
+./resmon-sensor [-h|--help] [-a|--address ADDRESS] [-i|--interval INTERVAL] [-b|--buffer BUFFER] [-n|--name NAME]
 ```
+Options are descriped in [this sectionk](#options)
 
-### Options
+## on Windows
+You can run this application by executing the following command:
+```bash
+python ./src/main.py [-h|--help] [-a|--address ADDRESS] [-i|--interval INTERVAL] [-b|--buffer BUFFER] [-n|--name NAME]
+```
+Options are descriped in [this sectionk](#options)
+
+## Options
 | Option                                       | Default value | Description                                       |
 | ---------------------------------------------|:-------------:| -------------------------------------------------:|
 | **-h**, **--help**                           | ---           | show help message and exit the application        |
@@ -17,12 +30,22 @@ Repository for a sensor component, which is part of resmon product. This applica
 | **-n _NAME_**, **--name _NAME_**             | ---           | User friendly identifier                          |
 
 #Instalation
-We provide single file `install.sh` which is used to install this application. It's enough that you just run it as following:
+
+## on Linux
+We provide single file `install-sensor.sh` which is used to install this application. It's enough that you just run it as following:
 ```bash
-./install.sh [--quiet]
+./install-sensor.sh [--quiet]
 ```
 Later you have to accept unpacking files. It's automatically accepted if you choose option _--quiet_.
-Application will be installed in the same place where script `install.sh`
+Application will be installed in the same place where script `install-sensor.sh`
+
+## on Windows
+1. Install Python 3.6
+2. Install `pip` tool for Python in that version
+3. Execute following command:
+```bash
+python -m pip install --trusted-host pypi.python.org --no-cache-dir -r requirements --user
+```
 
 #For developers
 
@@ -32,9 +55,12 @@ All scripts can be executed in this way:
 ./scripts.sh SCRIPT_NAME
 ```
 where `SCRIPT_NAME` can be as following:
-* `build` - it prepares file _install.sh_ to use it later for installing this application
+* `build` - it prepares file _install-sensor.sh_ to use it later for installing this application
 * `docgen` - it generates documentation and puts it into _./docs/_ directory
 * `runtest` - it runs all tests available for this project
+
+**Info!** If you need to use environment file manually, 
+it is located in `./data` directory.
 
 ## Deployment on Docker
 You can develop this application on [Docker](https://docs.docker.com). It can be used to testing it in a clear environment. 
@@ -49,19 +75,3 @@ and:
 docker run -it resmon-sensor
 ```
 Then you can run there this application.
-
-# Windows
-
-## Instalation
-1. Install Python 3.6
-2. Install `pip` tool for Python in that version
-3. Execute following command:
-```bash
-python -m pip install --trusted-host pypi.python.org --no-cache-dir -r requirements --user
-```
-
-## Usage
-You can run this application by executing the following command:
-```bash
-python ./src/main.py
-```

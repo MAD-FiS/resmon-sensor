@@ -21,4 +21,9 @@ if __name__ == '__main__':
 
     sensorClient = src.sensorClient.SensorClient(args.address, args.interval,
                                                  args.buffer, args.name)
-    sensorClient.startClient()
+    try:
+        sensorClient.startClient()
+    except KeyboardInterrupt:
+        print()
+        print('You stopped the sensor manually')
+        exit(0)
