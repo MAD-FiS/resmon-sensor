@@ -4,8 +4,8 @@ echo "ResMon builder"
 echo "----------------------"
 echo ""
 
-rm -f `find -name '*.pyc'`
-rm -rf `find -name  '__pycache__'`
+rm -f `find . -name '*.pyc'`
+rm -rf `find . -name  '__pycache__'`
 
 cat ./scripts/install.template > install-sensor.sh
 echo "ARCHIVE_DATA:" >> install-sensor.sh

@@ -1,6 +1,6 @@
 # resmon-sensor
 Repository for a sensor component, which is part of ResMon software.
-This application can work on Linux, Windows and Mac OS (in a similar way like on Linux).
+This application can work on Linux, Windows.
 
 **Info!** All path existing in this file are considered 
 as being used in project/install root directory.
@@ -29,7 +29,7 @@ Options are described in [this section](#options)
 | **-b _BUFFER_**, **--buffer _BUFFER_**       | 10            | Messages buffer size                              |
 | **-n _NAME_**, **--name _NAME_**             | ---           | User friendly identifier                          |
 
-# Instalation
+# Installation
 
 ## on Linux
 
@@ -55,6 +55,17 @@ install-win [--quiet]
 
 You have to clone this repository. Then you can work with it and develop the application.
 If you want to run it locally for testing, it doesn't need to create installer `install-sensor.sh` 
+
+## Used Python modules
+
+These modules are required by this application. If you want for example run tests,
+you need to be sure that all of them are installed on your computer by `pip3`.
+You can use for it `./data/requirements` file.
+
+| Module name                            | Version             |
+| -------------------------------------- |:-------------------:|
+| psutil                                 | 5.4.3               |
+| requests                               | 2.19.1              |
 
 ## Scripts
 

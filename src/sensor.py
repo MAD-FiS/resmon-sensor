@@ -82,7 +82,7 @@ class Sensor:
 
     def getDate(self):
         """Getter for date"""
-        return str(datetime.datetime.now())
+        return str(datetime.datetime.now().isoformat())
 
     def getCpuUsage(self):
         """Getter for CPU usage in percentage"""
@@ -184,7 +184,7 @@ class MetaSensor:
 
     def getDate(self):
         """Getter for date"""
-        return str(datetime.datetime.now())
+        return str(datetime.datetime.now().isoformat())
 
     def getSessionId(self):
         """Getter for session ID"""
