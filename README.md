@@ -1,6 +1,6 @@
 # resmon-sensor
 Repository for a sensor component, which is part of ResMon software.
-This application can work on Linux, Windows.
+This application can work on Linux and Windows.
 
 **Info!** All path existing in this file are considered 
 as being used in project/install root directory.
